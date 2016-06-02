@@ -1,4 +1,7 @@
 apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "com.twu.biblioteca.BibliotecaApp"
 
 repositories {
     mavenCentral()
