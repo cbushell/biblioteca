@@ -10,7 +10,7 @@ public class Library {
 
     public void listBooks() {
         for (Book book : books) {
-            System.out.println(book.getTitle());
+            System.out.println(book.getTitle() + ", " + book.getAuthor() + ", " + book.getYearPublished());
         }
     }
 }

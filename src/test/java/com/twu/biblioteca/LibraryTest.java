@@ -13,8 +13,8 @@ public class LibraryTest {
     private final ByteArrayOutputStream stdOut = new ByteArrayOutputStream();
 
     private final Book[] books = new Book[]{
-            new Book("Charlie and the Chocolate Factory"),
-            new Book("James and the Giant Peach")
+            new Book("Charlie and the Chocolate Factory", "Roald Dahl", 1964),
+            new Book("The Catcher in the Rye", "J.D. Salinger", 1951)
     };
 
     @Before
@@ -25,7 +25,7 @@ public class LibraryTest {
     @Test
     public void itShouldDisplayTheListOfBooksInTheLibrary() {
         new Library(books).listBooks();
-        assertEquals(stdOut.toString(), "Charlie and the Chocolate Factory\nJames and the Giant Peach\n");
+        assertEquals(stdOut.toString(), "Charlie and the Chocolate Factory, Roald Dahl, 1964\nThe Catcher in the Rye, J.D. Salinger, 1951\n");
     }
 
 }

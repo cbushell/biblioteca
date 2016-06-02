@@ -11,15 +11,14 @@ public class BibliotecaAppTest {
     private final ByteArrayOutputStream stdOut = new ByteArrayOutputStream();
 
     private final Book[] books = new Book[]{
-            new Book("Charlie and the Chocolate Factory"),
-            new Book("James and the Giant Peach")
+            new Book("The Catcher in the Rye", "Charlie and the Chocolate Factory", 1951),
+            new Book("The Catcher in the Rye", "James and the Giant Peach", 1951)
     };
 
     @Before
     public void setUp() {
         System.setOut(new PrintStream(stdOut));
     }
-
 
     @Test
     public void itShouldPrintWelcomMessage() {
