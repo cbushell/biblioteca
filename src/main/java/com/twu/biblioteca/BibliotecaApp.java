@@ -2,18 +2,15 @@ package com.twu.biblioteca;
 
 public class BibliotecaApp {
 
-    private final Book[] books;
+    private final Library library;
     private final WelcomeMessagePrinter welcomeMessagePrinter;
 
-    public BibliotecaApp(Book[] books, WelcomeMessagePrinter welcomeMessagePrinter) {
-        this.books = books;
+    public BibliotecaApp(Library library, WelcomeMessagePrinter welcomeMessagePrinter) {
+        this.library = library;
         this.welcomeMessagePrinter = welcomeMessagePrinter;
     }
 
     public void run() {
-        for (Book book : books) {
-            System.out.println(book.getTitle());
-        }
     }
 
 }
