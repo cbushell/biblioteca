@@ -11,7 +11,6 @@ public class BibliotecaApp {
     }
 
     public void run() {
-
         this.welcomeMessagePrinter.printWelcomeMessage();
         this.library.listBooks();
     }

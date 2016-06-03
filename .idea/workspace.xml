@@ -54,8 +54,8 @@
       <file leaf-file-name="BibliotecaApp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/twu/biblioteca/BibliotecaApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            <state relative-caret-position="195">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -287,8 +287,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/BibliotecaApp.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/twu/biblioteca/BibliotecaAppTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/BibliotecaApp.java" />
       </list>
     </option>
   </component>
@@ -1048,7 +1048,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464939106004</updated>
-      <workItem from="1464939107658" duration="320000" />
+      <workItem from="1464939107658" duration="451000" />
     </task>
     <servers />
   </component>
@@ -1068,9 +1068,12 @@
     <history-entry file="BibliotecaAppTest_itShouldPrintWelcomMessage - 2016.06.03 at 08h 36m 59s.xml">
       <configuration name="BibliotecaAppTest.itShouldPrintWelcomMessage" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="BibliotecaAppTest_itShouldPrintWelcomMessage - 2016.06.03 at 08h 39m 37s.xml">
+      <configuration name="BibliotecaAppTest.itShouldPrintWelcomMessage" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="320000" />
+    <option name="totallyTimeSpent" value="451000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
@@ -1128,8 +1131,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/twu/biblioteca/BibliotecaApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        <state relative-caret-position="195">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
