@@ -4,10 +4,12 @@ apply plugin: 'application'
 mainClassName = "com.twu.biblioteca.BibliotecaApp"
 
 repositories {
+    jcenter()
     mavenCentral()
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.+'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '1.+'
 }
 

@@ -6,14 +6,13 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import static org.mockito.Mockito.*;
+
 public class BibliotecaAppTest {
 
-    private final ByteArrayOutputStream stdOut = new ByteArrayOutputStream();
+    private final Book[] books = new Book[]{};
 
-    private final Book[] books = new Book[]{
-            new Book("The Catcher in the Rye", "Charlie and the Chocolate Factory", 1951),
-            new Book("The Catcher in the Rye", "James and the Giant Peach", 1951)
-    };
+    private final ByteArrayOutputStream stdOut = new ByteArrayOutputStream();
 
     @Before
     public void setUp() {
@@ -23,19 +22,19 @@ public class BibliotecaAppTest {
     @Test
     public void itShouldPrintWelcomMessage() {
         Library library = new Library(books);
-        WelcomeMessagePrinter welcomeMessagePrinter = new WelcomeMessagePrinter();
-        new BibliotecaApp(library, welcomeMessagePrinter);
+        WelcomeMessagePrinter welcomeMessagePrinter = mock(WelcomeMessagePrinter.class);
 
-        // TODO: on train, can't donwload mockito now. Write test to mock WelcomeMessagePrinter and check welcome message is printed
+        new BibliotecaApp(library, welcomeMessagePrinter).run();
+        verify(welcomeMessagePrinter).printWelcomeMessage();
     }
 
     @Test
     public void itShouldDisplayTheListOfBooksInTheLibrary() {
-        Library library = new Library(books);
+        Library library = mock(Library.class);
         WelcomeMessagePrinter welcomeMessagePrinter = new WelcomeMessagePrinter();
 
         new BibliotecaApp(library, welcomeMessagePrinter).run();
-        // TODO: on train, can't donwload mockito now. Write test to mock library and check catalogue is printed
+        verify(library).listBooks();
     }
 
 }
