@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -26,18 +26,23 @@ public class LibraryControllerTest {
     public void itShouldPrintWelcomMessage() {
         Library library = new Library(books);
         LibraryView libraryView = mock(LibraryView.class);
+        LibraryCommand[] commands = new LibraryCommand[]{};
 
-        new LibraryController(library, libraryView).run();
+        new LibraryController(library, libraryView, commands).run();
         verify(libraryView).displayWelcomMessage();
     }
 
     @Test
     public void itShouldDisplayTheListOfOptions() {
-        Library library = mock(Library.class);
+        Library library = new Library(books);
         LibraryView libraryView = mock(LibraryView.class);
+        LibraryCommand[] commands = new LibraryCommand[]{
+                new LibraryCommand("Foo"),
+                new LibraryCommand("Bar")
+        };
 
-        new LibraryController(library, libraryView).run();
-        verify(libraryView).displayOptions();
+        new LibraryController(library, libraryView, commands).run();
+        assertEquals("0 - Foo\n1 - Bar\n", stdOut.toString());
     }
 
 

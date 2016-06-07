@@ -8,9 +8,14 @@ public class BibliotecaApp {
                 new Book("The Catcher in the Rye", "J.D. Salinger", 1951)
         };
 
+        LibraryCommand[] commands = new LibraryCommand[]{
+                new LibraryCommand("List Books")
+        };
+
         Library library = new Library(books);
         LibraryView libraryView = new LibraryView(library);
-        LibraryController libraryController = new LibraryController(library, libraryView);
+
+        LibraryController libraryController = new LibraryController(library, libraryView, commands);
         libraryController.run();
     }
 
