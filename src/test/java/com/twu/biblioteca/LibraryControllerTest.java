@@ -7,8 +7,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 
 
 public class LibraryControllerTest {
@@ -24,25 +22,37 @@ public class LibraryControllerTest {
 
     @Test
     public void itShouldPrintWelcomMessage() {
+        String welcomeMessage = "Foo bar baz!";
+
         Library library = new Library(books);
-        LibraryView libraryView = mock(LibraryView.class);
         LibraryCommand[] commands = new LibraryCommand[]{};
 
-        new LibraryController(library, libraryView, commands).run();
-        verify(libraryView).displayWelcomMessage();
+        new LibraryController(library, welcomeMessage, commands).run();
+        assertEquals(welcomeMessage, stdOut.toString().trim());
     }
 
     @Test
     public void itShouldDisplayTheListOfOptions() {
+        String welcomeMessage = "";
+
         Library library = new Library(books);
-        LibraryView libraryView = mock(LibraryView.class);
         LibraryCommand[] commands = new LibraryCommand[]{
-                new LibraryCommand("Foo"),
-                new LibraryCommand("Bar")
+                new NullLibraryCommand("Foo", library),
+                new NullLibraryCommand("Bar", library)
         };
 
-        new LibraryController(library, libraryView, commands).run();
-        assertEquals("0 - Foo\n1 - Bar\n", stdOut.toString());
+        new LibraryController(library, welcomeMessage, commands).run();
+        assertEquals("0 - Foo\n1 - Bar", stdOut.toString().trim());
+    }
+
+    private class NullLibraryCommand extends LibraryCommand {
+        public NullLibraryCommand(String name, Library library) {
+            super(name, library);
+        }
+
+        @Override
+        public void execute() {
+        }
     }
 
 

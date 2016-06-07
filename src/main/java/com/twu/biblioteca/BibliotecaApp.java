@@ -2,20 +2,19 @@ package com.twu.biblioteca;
 
 public class BibliotecaApp {
 
+    public static final String welcomeMessage = "Welcome to Biblioteca";
+
     public static void main(String[] args) {
-        Book[] books = new Book[]{
+        Library library = new Library(new Book[]{
                 new Book("Charlie and the Chocolate Factory", "Roald Dahl", 1964),
                 new Book("The Catcher in the Rye", "J.D. Salinger", 1951)
-        };
+        });
 
         LibraryCommand[] commands = new LibraryCommand[]{
-                new LibraryCommand("List Books")
+                new ListBooksCommand("List Books", library)
         };
 
-        Library library = new Library(books);
-        LibraryView libraryView = new LibraryView(library);
-
-        LibraryController libraryController = new LibraryController(library, libraryView, commands);
+        LibraryController libraryController = new LibraryController(library, welcomeMessage, commands);
         libraryController.run();
     }
 
