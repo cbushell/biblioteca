@@ -9,7 +9,7 @@ public class LibraryView {
     }
 
     public void displayOptions() {
-        System.out.println("List Books");
+        System.out.println("1 - List Books");
     }
 
     public void displayWelcomMessage() {

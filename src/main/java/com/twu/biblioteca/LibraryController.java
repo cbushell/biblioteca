@@ -13,7 +13,7 @@ public class LibraryController {
 
     public void run() {
         this.libraryView.displayWelcomMessage();
-        this.libraryView.displayBooksSummary();
+        this.libraryView.displayOptions();
     }
 
 }

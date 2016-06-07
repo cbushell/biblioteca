@@ -32,12 +32,12 @@ public class LibraryControllerTest {
     }
 
     @Test
-    public void itShouldDisplayTheListOfBooksInTheLibrary() {
+    public void itShouldDisplayTheListOfOptions() {
         Library library = mock(Library.class);
         LibraryView libraryView = mock(LibraryView.class);
 
         new LibraryController(library, libraryView).run();
-        verify(libraryView).displayBooksSummary();
+        verify(libraryView).displayOptions();
     }
 
 

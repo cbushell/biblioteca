@@ -27,7 +27,7 @@ public class LibraryViewTest {
     @Test
     public void itShouldListAllOptions() {
         new LibraryView(library).displayOptions();
-        assertEquals(stdOut.toString(), "List Books\n");
+        assertEquals(stdOut.toString(), "1 - List Books\n");
     }
 
     @Test
